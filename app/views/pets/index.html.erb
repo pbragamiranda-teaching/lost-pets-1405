@@ -1,0 +1,14 @@
+<h1>Lost and Founds: Pets</h1>
+
+
+<% @pets.each do |pet| %>
+  <p> The <%= pet.species %>,
+  <%= link_to pet.name, pet_path(pet) %>,
+  was found at <%= pet.address  %> on <%= pet.found_on %></p>
+  <p> <%= link_to "mark as found", pet_path(pet),
+          data: { turbo_method: "delete", turbo_confirm: "Sure?" },
+          class: "btn btn-danger" %></p>
+<% end %>
+
+
+<%= link_to "Add a Pet", new_pet_path, class: "btn btn-primary" %>

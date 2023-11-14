@@ -1,0 +1,7 @@
+<%= simple_form_for pet do |f| %>
+  <%= f.input :name, placeholder: "bambi" %>
+  <%= f.input :address %>
+  <%= f.input :species, collection: %w(dog cat rabbit snake turtle) %>
+  <%= f.input :found_on, html5: true %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
